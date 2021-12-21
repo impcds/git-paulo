@@ -11,9 +11,9 @@ lance_ana = Lance(ana, 125.50)
 
 leilao = Leilao('Forninho')
 
-leilao.lances.append(lance_ana)
-leilao.lances.append(lance_maria)
-leilao.lances.append(lance_julia)
+leilao.propoe(lance_ana)
+leilao.propoe(lance_maria)
+leilao.propoe(lance_julia)
 
 for i in leilao.lances:
     print(f'O cliente {i.usuario.nome} deu o lance de RS {i.valor:.2f}')
