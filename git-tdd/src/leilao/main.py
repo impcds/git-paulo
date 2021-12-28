@@ -1,7 +1,7 @@
 from dominio import Usuario, Lance, Leilao, Avaliador
 
 
-ana = Usuario('Ana')
+'''ana = Usuario('Ana')
 julia = Usuario('Júlia')
 maria = Usuario('Maria')
 
@@ -23,3 +23,4 @@ avaliador = Avaliador()
 
 avaliador.avalia(leilao)
 print(f'maior lance {avaliador.maior_lance}\nmenor lance {avaliador.menor_lance}')
+'''
