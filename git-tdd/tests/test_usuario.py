@@ -1,8 +1,8 @@
-from src.leilao.dominio import Usuario, Leilao
-
 import pytest
-
+from src.leilao.dominio import Usuario, Leilao
 from src.leilao.excecoes import LanceInvalido
+
+
 
 
 @pytest.fixture

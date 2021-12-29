@@ -1,4 +1,4 @@
-from excecoes import LanceInvalido
+from src.leilao.excecoes import LanceInvalido
 import sys
 
 class Usuario:
@@ -21,7 +21,7 @@ class Usuario:
     @property
     def nome(self):
         return self.__nome
-    
+
     @property
     def carteira(self):
         return self.__carteira
