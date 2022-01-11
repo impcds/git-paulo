@@ -1,11 +1,18 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
+from animais.models import Animal
 
 
 class AnimaisTestCase(LiveServerTestCase):
 
     def setUp(self) -> None:
-        self.browser = webdriver.Chrome('C:\\Users\\Paulo César\\p\git-paulo\\alura-tdd-django\\chromedriver.exe')
+        self.browser = webdriver.Chrome(r'C:\Users\Paulo César\p\git-paulo\alura-tdd-django\chromedriver.exe')
+        self.animal = Animal.objects.create(
+            nome_animal = "leão",
+            predador = "Sim",
+            venenoso = "Não",
+            domestico = "Não"
+        )
 
     def tearDown(self):
         self.browser.quit()
