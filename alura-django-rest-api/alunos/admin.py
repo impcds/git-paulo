@@ -1,5 +1,5 @@
 from django.contrib import admin
-from alunos.models import Alunos, Cursos
+from alunos.models import Alunos, Cursos, Matriculas
 # Register your models here.
 
 
@@ -19,3 +19,11 @@ class Curso(admin.ModelAdmin):
 
 
 admin.site.register(Cursos, Curso)
+
+
+class Matricula(admin.ModelAdmin):
+    list_display = ('id', 'aluno', 'curso', 'periodo')
+    list_editable = ('periodo', )
+
+
+admin.site.register(Matriculas, Matricula)
