@@ -21,3 +21,23 @@ class MatriculasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Matriculas
         fields = '__all__'
+
+
+class ListaMatriculasAlunoSerializer(serializers.ModelSerializer):
+    curso = serializers.ReadOnlyField(source='curso.descricao')
+    periodo = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Matriculas
+        fields = ['curso', 'periodo']
+
+    def get_periodo(self, obj):
+        return obj.get_periodo_display()
+
+
+class ListaAlunosMatriculadosSerializer(serializers.ModelSerializer):
+    aluno_nome = serializers.ReadOnlyField(source='aluno.rg')
+
+    class Meta:
+        model = Matriculas
+        fields = ['aluno_nome']
