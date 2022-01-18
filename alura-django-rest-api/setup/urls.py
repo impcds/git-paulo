@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from alunos.views import AlunosViewSet, CursosViewSet, MatriculasViewSet, ListaMatriculasAluno, ListaAlunosMatriculados
+from alunos.views import AlunosViewSet, CursosViewSet, MatriculasViewSet, ListaMatriculasAluno, ListaAlunosMatriculados, ListaCursos
 from rest_framework import routers
 
 
@@ -28,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('alunos/<int:pk>/matriculas/', ListaMatriculasAluno.as_view()),
-    path('cursos/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view())
+    path('cursos/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view()),
+    path('courses/', ListaCursos.as_view())
 ]
